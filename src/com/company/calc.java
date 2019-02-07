@@ -23,9 +23,9 @@ public class calc extends Application  {
     int numclicked = 0;
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) /*throws Exception*/ {
         primaryStage.setTitle("HBox Experiment 1");
-        GridPane canvas = new GridPane();
+        TilePane canvas = new TilePane();
 
         Button plus = new Button("+");
         Button minus = new Button("-");
@@ -36,34 +36,58 @@ public class calc extends Application  {
         Button equals = new Button("=");
         TextField num1 = new TextField();
         TextField num2 = new TextField();
+        Label answer = new Label("Answer");
 
-        canvas.add(divide, 0, 0);
-        canvas.add(multiply, 1,0);
-        canvas.add(plus, 0, 1);
-        canvas.add(minus, 1, 1);
+        canvas.getChildren().add(divide);
+        canvas.getChildren().add(multiply);
+        canvas.getChildren().add(plus);
+        canvas.getChildren().add(minus);
 
-        canvas.add(num1,0,2);
-        canvas.add(num2,1,2);
-        canvas.add(lastInp,0,3,2,1);
-        canvas.add(equals,0,3,2,1);
-        canvas.add(clear,0,4,2,1);
+        canvas.getChildren().add(num1);
+        canvas.getChildren().add(num2);
+        canvas.getChildren().add(lastInp);
+        canvas.getChildren().add(clear);
 
-        num1.setPrefWidth(70);
-        num2.setPrefWidth(70);
+        canvas.getChildren().add(equals);
+        canvas.getChildren().add(answer);
+
+        num1.setPrefWidth(35);
+        num2.setPrefWidth(35);
         divide.setPrefWidth(70);
         multiply.setPrefWidth(70);
         plus.setPrefWidth(70);
         minus.setPrefWidth(70);
-        clear.setPrefWidth(140);
-        lastInp.setPrefWidth(140);
-        equals.setPrefWidth(140);
+        clear.setPrefWidth(70);
+        lastInp.setPrefWidth(70);
+        equals.setPrefWidth(70);
+        answer.setPrefWidth(140);
 
+        //Left Column
+        num1.setTranslateX(43);
+        divide.setTranslateX(43);
+        plus.setTranslateX(43);
+        lastInp.setTranslateX(43);
+
+        //Right Column
+        num2.setTranslateX(-23);
+        multiply.setTranslateX(-23);
+        minus.setTranslateX(-23);
+        clear.setTranslateX(-23);
+
+        //Equals Button and Answer Label
+        equals.setTranslateX(43);
+        answer.setTranslateX(30);
+
+        num1.setMaxSize(70.0, Double.MAX_VALUE);
+        num2.setMaxSize(70.0, Double.MAX_VALUE);
 
         Scene scene = new Scene(canvas, 300, 300);
         primaryStage.setScene(scene);
         primaryStage.show();
 
     }
+
+
 
     public static void main(String[] args) {
         Application.launch(args);
