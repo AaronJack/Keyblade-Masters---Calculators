@@ -21,6 +21,11 @@ public class calc extends Application  {
 
     long start = System.nanoTime();
     int numclicked = 0;
+    String problem = "";
+
+    public String getProblem() {
+        return problem;
+    }
 
     @Override
     public void start(Stage primaryStage) /*throws Exception*/ {
@@ -37,6 +42,59 @@ public class calc extends Application  {
         TextField num1 = new TextField();
         TextField num2 = new TextField();
         Label answer = new Label("Answer");
+
+        plus.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                problem = ""+num1.getText()+" + "+num2.getText();
+                System.out.println(getProblem());
+            }
+        });
+        minus.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                problem = ""+num1.getText()+" - "+num2.getText();
+                System.out.println(getProblem());
+            }
+        });
+        multiply.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                problem = ""+num1.getText()+" * "+num2.getText();
+                System.out.println(getProblem());
+            }
+        });
+        divide.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                problem = ""+num1.getText()+" / "+num2.getText();
+                System.out.println(getProblem());
+            }
+        });
+        clear.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                num1.setText("");
+                num2.setText("");
+            }
+        });
+        equals.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                if(getProblem().substring(2,3).equals("+")){
+                    System.out.println(Double.parseDouble(getProblem().substring(0,1)) + Double.parseDouble(getProblem().substring(4)));
+                }
+                if(getProblem().substring(2,3).equals("-")){
+                    System.out.println(Double.parseDouble(getProblem().substring(0,1)) - Double.parseDouble(getProblem().substring(4)));
+                }
+                if(getProblem().substring(2,3).equals("*")){
+                    System.out.println(Double.parseDouble(getProblem().substring(0,1)) * Double.parseDouble(getProblem().substring(4)));
+                }
+                if(getProblem().substring(2,3).equals("/")){
+                    System.out.println(Double.parseDouble(getProblem().substring(0,1)) / Double.parseDouble(getProblem().substring(4)));
+                }
+            }
+        });
 
         canvas.getChildren().add(divide);
         canvas.getChildren().add(multiply);
