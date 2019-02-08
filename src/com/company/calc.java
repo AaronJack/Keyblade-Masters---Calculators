@@ -22,9 +22,13 @@ public class calc extends Application  {
     long start = System.nanoTime();
     int numclicked = 0;
     String problem = "";
+    Double Solution = 0.0;
 
     public String getProblem() {
         return problem;
+    }
+    public double getSolution(){
+        return Solution;
     }
 
     @Override
@@ -47,6 +51,7 @@ public class calc extends Application  {
             @Override
             public void handle(ActionEvent event) {
                 problem = ""+num1.getText()+" + "+num2.getText();
+                Solution = Double.parseDouble(num1.getText()) + Double.parseDouble(num2.getText());
                 System.out.println(getProblem());
             }
         });
@@ -54,6 +59,7 @@ public class calc extends Application  {
             @Override
             public void handle(ActionEvent event) {
                 problem = ""+num1.getText()+" - "+num2.getText();
+                Solution = Double.parseDouble(num1.getText()) - Double.parseDouble(num2.getText());
                 System.out.println(getProblem());
             }
         });
@@ -61,6 +67,7 @@ public class calc extends Application  {
             @Override
             public void handle(ActionEvent event) {
                 problem = ""+num1.getText()+" * "+num2.getText();
+                Solution = Double.parseDouble(num1.getText()) * Double.parseDouble(num2.getText());
                 System.out.println(getProblem());
             }
         });
@@ -68,6 +75,7 @@ public class calc extends Application  {
             @Override
             public void handle(ActionEvent event) {
                 problem = ""+num1.getText()+" / "+num2.getText();
+                Solution = Double.parseDouble(num1.getText()) / Double.parseDouble(num2.getText());
                 System.out.println(getProblem());
             }
         });
@@ -81,18 +89,7 @@ public class calc extends Application  {
         equals.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if(getProblem().substring(2,3).equals("+")){
-                    System.out.println(Double.parseDouble(getProblem().substring(0,1)) + Double.parseDouble(getProblem().substring(4)));
-                }
-                if(getProblem().substring(2,3).equals("-")){
-                    System.out.println(Double.parseDouble(getProblem().substring(0,1)) - Double.parseDouble(getProblem().substring(4)));
-                }
-                if(getProblem().substring(2,3).equals("*")){
-                    System.out.println(Double.parseDouble(getProblem().substring(0,1)) * Double.parseDouble(getProblem().substring(4)));
-                }
-                if(getProblem().substring(2,3).equals("/")){
-                    System.out.println(Double.parseDouble(getProblem().substring(0,1)) / Double.parseDouble(getProblem().substring(4)));
-                }
+                System.out.println(getSolution());
             }
         });
 
