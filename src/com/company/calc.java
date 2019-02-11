@@ -71,6 +71,7 @@ public class calc extends Application  {
                 problem = ""+num1.getText()+" * "+num2.getText();
                 Solution = Double.parseDouble(num1.getText()) * Double.parseDouble(num2.getText());
                 System.out.println(getProblem());
+                CsvWriter.problemLogger(problem);
             }
         });
         divide.setOnAction(new EventHandler<ActionEvent>() {
@@ -79,6 +80,7 @@ public class calc extends Application  {
                 problem = ""+num1.getText()+" / "+num2.getText();
                 Solution = Double.parseDouble(num1.getText()) / Double.parseDouble(num2.getText());
                 System.out.println(getProblem());
+                CsvWriter.problemLogger(problem);
             }
         });
         clear.setOnAction(new EventHandler<ActionEvent>() {
@@ -86,6 +88,7 @@ public class calc extends Application  {
             public void handle(ActionEvent event) {
                 num1.setText("");
                 num2.setText("");
+                CsvWriter.clearLogger();
             }
         });
         equals.setOnAction(new EventHandler<ActionEvent>() {
@@ -93,6 +96,8 @@ public class calc extends Application  {
             public void handle(ActionEvent event) {
                 System.out.println(getSolution());
             }
+            CsvWriter.solutionWriter(Solution);
+
         });
 
         canvas.getChildren().add(divide);
