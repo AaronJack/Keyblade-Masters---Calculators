@@ -10,6 +10,8 @@ public class CsvWriter
         {
             StringBuilder sb = new StringBuilder();
             sb.append(prob);
+            writer.write(sb.toString());
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -20,6 +22,7 @@ public class CsvWriter
         {
             StringBuilder sb = new StringBuilder();
             sb.append(sol);
+            writer.write(sb.toString());
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
