@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 import javax.xml.soap.Text;
 import java.lang.*;
 import java.lang.reflect.Array;
-
+import com.company.CsvWriter;
 public class calc extends Application  {
 
     long start = System.nanoTime();
@@ -53,6 +53,7 @@ public class calc extends Application  {
                 problem = ""+num1.getText()+" + "+num2.getText();
                 Solution = Double.parseDouble(num1.getText()) + Double.parseDouble(num2.getText());
                 System.out.println(getProblem());
+                CsvWriter.problemLogger(problem);
             }
         });
         minus.setOnAction(new EventHandler<ActionEvent>() {
@@ -61,6 +62,7 @@ public class calc extends Application  {
                 problem = ""+num1.getText()+" - "+num2.getText();
                 Solution = Double.parseDouble(num1.getText()) - Double.parseDouble(num2.getText());
                 System.out.println(getProblem());
+                CsvWriter.problemLogger(problem);
             }
         });
         multiply.setOnAction(new EventHandler<ActionEvent>() {
