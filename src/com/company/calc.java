@@ -53,8 +53,8 @@ public class calc extends Application  {
                 problem = ""+num1.getText()+" + "+num2.getText();
                 Solution = Double.parseDouble(num1.getText()) + Double.parseDouble(num2.getText());
                 System.out.println(getProblem());
-                String test = problem;
-                CsvWriter.problemLogger(test);
+                String check = problem;
+                CsvWriter.problemLogger(check);
             }
         });
         minus.setOnAction(new EventHandler<ActionEvent>() {
@@ -63,8 +63,9 @@ public class calc extends Application  {
                 problem = ""+num1.getText()+" - "+num2.getText();
                 Solution = Double.parseDouble(num1.getText()) - Double.parseDouble(num2.getText());
                 System.out.println(getProblem());
-                String test = problem;
-                CsvWriter.problemLogger(test);
+                String check = problem;
+                CsvWriter.problemLogger(check);
+
             }
         });
         multiply.setOnAction(new EventHandler<ActionEvent>() {
@@ -73,8 +74,9 @@ public class calc extends Application  {
                 problem = ""+num1.getText()+" * "+num2.getText();
                 Solution = Double.parseDouble(num1.getText()) * Double.parseDouble(num2.getText());
                 System.out.println(getProblem());
-                String test = problem;
-                CsvWriter.problemLogger(test);
+                String check = problem;
+                CsvWriter.problemLogger(check);
+
             }
         });
         divide.setOnAction(new EventHandler<ActionEvent>() {
@@ -83,8 +85,8 @@ public class calc extends Application  {
                 problem = ""+num1.getText()+" / "+num2.getText();
                 Solution = Double.parseDouble(num1.getText()) / Double.parseDouble(num2.getText());
                 System.out.println(getProblem());
-                String test = problem;
-                CsvWriter.problemLogger(test);
+                String check = problem;
+                CsvWriter.problemLogger(check);
 
             }
         });
@@ -101,7 +103,7 @@ public class calc extends Application  {
             public void handle(ActionEvent event) {
                 System.out.println(getSolution());
                 Double log = getSolution();
-                CsvWriter.solutionWriter(log);
+
             }
 
 

@@ -5,7 +5,7 @@ public class CsvWriter
     //WRITES ON THE SAME LINE FIX IT SO IT STARTS A NEW LINE EACH TIME IT RUNS
 {
 
-    public void problemLogger(String prob) throws FileNotFoundException {
+    public static void problemLogger(String prob)   {
 
         try
         {
@@ -21,7 +21,7 @@ public class CsvWriter
             e.printStackTrace();
         }
     }
-    public  void solutionWriter(String sol) throws FileNotFoundException
+    public static void solutionWriter(String sol)
     {
         try
         {
@@ -37,7 +37,7 @@ public class CsvWriter
             e.printStackTrace();
         }
     }
-    public void clearLogger()
+    public static void clearLogger()
     {
         try
         {
