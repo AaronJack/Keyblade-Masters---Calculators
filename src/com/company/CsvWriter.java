@@ -3,7 +3,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 public class CsvWriter
-    //WRITERS ON THE SAME LINE FIX IT SO IT STARTS A NEW LINE EACH TIME IT RUNS
+    //WRITES ON THE SAME LINE FIX IT SO IT STARTS A NEW LINE EACH TIME IT RUNS
 {
     public static void problemLogger(String prob)
     {
@@ -11,8 +11,9 @@ public class CsvWriter
         {
             StringBuilder sb = new StringBuilder();
             sb.append(prob);
+            sb.append(System.getProperty("line.separator"));
             writer.write(sb.toString());
-
+            writer.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -23,8 +24,9 @@ public class CsvWriter
         {
             StringBuilder sb = new StringBuilder();
             sb.append(sol);
+            sb.append(System.getProperty("line.separator"));
             writer.write(sb.toString());
-
+            writer.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -35,8 +37,9 @@ public class CsvWriter
         {
             StringBuilder sb = new StringBuilder();
             sb.append("User has cleared data");
+            sb.append(System.getProperty("line.separator"));
             writer.write(sb.toString());
-
+            writer.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
