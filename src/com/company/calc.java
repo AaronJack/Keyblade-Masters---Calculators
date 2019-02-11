@@ -53,7 +53,8 @@ public class calc extends Application  {
                 problem = ""+num1.getText()+" + "+num2.getText();
                 Solution = Double.parseDouble(num1.getText()) + Double.parseDouble(num2.getText());
                 System.out.println(getProblem());
-                CsvWriter.problemLogger(problem);
+                String test = problem;
+                CsvWriter.problemLogger(test);
             }
         });
         minus.setOnAction(new EventHandler<ActionEvent>() {
@@ -62,7 +63,8 @@ public class calc extends Application  {
                 problem = ""+num1.getText()+" - "+num2.getText();
                 Solution = Double.parseDouble(num1.getText()) - Double.parseDouble(num2.getText());
                 System.out.println(getProblem());
-                CsvWriter.problemLogger(problem);
+                String test = problem;
+                CsvWriter.problemLogger(test);
             }
         });
         multiply.setOnAction(new EventHandler<ActionEvent>() {
@@ -71,7 +73,8 @@ public class calc extends Application  {
                 problem = ""+num1.getText()+" * "+num2.getText();
                 Solution = Double.parseDouble(num1.getText()) * Double.parseDouble(num2.getText());
                 System.out.println(getProblem());
-                CsvWriter.problemLogger(problem);
+                String test = problem;
+                CsvWriter.problemLogger(test);
             }
         });
         divide.setOnAction(new EventHandler<ActionEvent>() {
@@ -80,7 +83,8 @@ public class calc extends Application  {
                 problem = ""+num1.getText()+" / "+num2.getText();
                 Solution = Double.parseDouble(num1.getText()) / Double.parseDouble(num2.getText());
                 System.out.println(getProblem());
-                CsvWriter.problemLogger(problem);
+                String test = problem;
+                CsvWriter.problemLogger(test);
 
             }
         });
@@ -96,7 +100,6 @@ public class calc extends Application  {
             @Override
             public void handle(ActionEvent event) {
                 System.out.println(getSolution());
-
                 Double log = getSolution();
                 CsvWriter.solutionWriter(log);
             }

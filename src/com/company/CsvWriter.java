@@ -1,46 +1,55 @@
 package com.company;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.io.*;
+import java.util.ArrayList;
 public class CsvWriter
     //WRITES ON THE SAME LINE FIX IT SO IT STARTS A NEW LINE EACH TIME IT RUNS
 {
-    public static void problemLogger(String prob)
-    {
-        try (PrintWriter writer = new PrintWriter(new File("data.csv")))
+
+    public void problemLogger(String prob) throws FileNotFoundException {
+
+        try
         {
-            StringBuilder sb = new StringBuilder();
+            FileWriter sb = new FileWriter("data.csv", true);
             sb.append(prob);
             sb.append(System.getProperty("line.separator"));
-            writer.write(sb.toString());
-            writer.close();
-        } catch (FileNotFoundException e) {
+            sb.write(sb.toString());
+            sb.flush();
+            sb.close();
+        }
+        catch (IOException e)
+        {
             e.printStackTrace();
         }
     }
-    public static void solutionWriter(Double sol)
+    public  void solutionWriter(String sol) throws FileNotFoundException
     {
-        try (PrintWriter writer = new PrintWriter(new File("data.csv")))
+        try
         {
-            StringBuilder sb = new StringBuilder();
+            FileWriter sb = new FileWriter("data.csv", true);
             sb.append(sol);
             sb.append(System.getProperty("line.separator"));
-            writer.write(sb.toString());
-            writer.close();
-        } catch (FileNotFoundException e) {
+            sb.write(sb.toString());
+            sb.flush();
+            sb.close();
+        }
+        catch (IOException e)
+        {
             e.printStackTrace();
         }
     }
-    public static void clearLogger()
+    public void clearLogger()
     {
-        try (PrintWriter writer = new PrintWriter(new File("data.csv")))
+        try
         {
-            StringBuilder sb = new StringBuilder();
+            FileWriter sb = new FileWriter("data.csv", true);
             sb.append("User has cleared data");
             sb.append(System.getProperty("line.separator"));
-            writer.write(sb.toString());
-            writer.close();
-        } catch (FileNotFoundException e) {
+            sb.write(sb.toString());
+            sb.flush();
+            sb.close();
+        }
+        catch (IOException e)
+        {
             e.printStackTrace();
         }
     }
