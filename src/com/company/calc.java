@@ -81,6 +81,7 @@ public class calc extends Application  {
                 Solution = Double.parseDouble(num1.getText()) / Double.parseDouble(num2.getText());
                 System.out.println(getProblem());
                 CsvWriter.problemLogger(problem);
+
             }
         });
         clear.setOnAction(new EventHandler<ActionEvent>() {
@@ -95,8 +96,11 @@ public class calc extends Application  {
             @Override
             public void handle(ActionEvent event) {
                 System.out.println(getSolution());
+
+                Double log = getSolution();
+                CsvWriter.solutionWriter(log);
             }
-            CsvWriter.solutionWriter(Solution);
+
 
         });
 

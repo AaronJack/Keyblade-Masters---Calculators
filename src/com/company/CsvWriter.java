@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 public class CsvWriter
+    //WRITERS ON THE SAME LINE FIX IT SO IT STARTS A NEW LINE EACH TIME IT RUNS
 {
     public static void problemLogger(String prob)
     {
