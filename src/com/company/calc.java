@@ -103,7 +103,8 @@ public class calc extends Application  {
             public void handle(ActionEvent event) {
                 System.out.println(getSolution());
                 Double log = getSolution();
-
+                String xyz = Solution.toString();
+                CsvWriter.solutionWriter(xyz);
             }
 
 
