@@ -30,10 +30,10 @@ public class CsvWriter
         try
         {
             FileWriter sb = new FileWriter("data.csv", true);
-
             sb.append(System.getProperty("line.separator"));
             sb.write("Solution: ");
             sb.write(sol.toString());
+            sb.append('\n');
             sb.flush();
             sb.close();
         }
@@ -49,7 +49,7 @@ public class CsvWriter
             FileWriter sb = new FileWriter("data.csv", true);
             sb.write("User has cleared data");
             sb.append(System.getProperty("line.separator"));
-
+            sb.append('\n');
             sb.flush();
             sb.close();
         }
